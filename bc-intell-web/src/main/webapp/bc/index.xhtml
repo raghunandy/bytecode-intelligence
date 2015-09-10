@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"/>
+        <link href="../css/app.css" rel="stylesheet" type="text/css"/>
+        <title>Bytecode Intelligence</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../css/bootstrap.css" rel="stylesheet"/>
+
+        <!-- Custom styles for this template -->
+        <link href="../css/justified-nav.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Just for debugging purposes. Don't actually copy this line! -->
+        <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </h:head>
+
+    <h:body>
+
+        <div class="container">
+            <h:form>
+                <div class="masthead">
+                    <h3 class="text-muted">Bytecode Intelligence</h3>
+                    <ul class="nav nav-justified">
+
+                         
+                        <li ><a  jsf:action="#{mainController.switchPage('home')}">Home</a></li>
+                        <!--          class="active"-->
+                        <li ><a jsf:action="#{mainController.switchPage('upload')}">Upload</a></li>
+                        <li><a href="#" jsf:action="#{mainController.switchPage('sample-reports')}">Sample Reports</a></li>
+                        <li><a href="#" jsf:action="#{mainController.switchPage('about')}">About</a></li>
+                        <li><a href="#" jsf:action="#{mainController.switchPage('contact')}">Contact</a></li>
+
+                    </ul>
+                </div>
+            </h:form>
+            
+            <ui:include src="pages/#{mainController.subPageName}.xhtml"/>
+            
+        </div>
+        
+        
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        
+      <!-- Site footer -->
+      <div class="footer">
+        <p> Bytecode Intelligence 2016</p>
+      </div>
+
+    </h:body>
+</html>
