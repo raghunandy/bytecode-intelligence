@@ -12,5 +12,6 @@ package bcintell.analyzer;
 public class PackageAnalyzer {
     public static void main(String[] args) {
         System.out.println("Package Analysis Successful");
+        System.out.println("Step 2");
     }
 }
