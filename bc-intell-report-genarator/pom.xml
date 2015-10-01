@@ -11,6 +11,11 @@
             <artifactId>bc-intell-config</artifactId>
             <version>${project.version}</version>
         </dependency>
+         <dependency>
+            <groupId>org.jodd</groupId>
+            <artifactId>jodd-mail</artifactId>
+            <version>3.6.5</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

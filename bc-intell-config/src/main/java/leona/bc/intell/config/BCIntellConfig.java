@@ -10,5 +10,13 @@ package leona.bc.intell.config;
  * @author Raghu
  */
 public class BCIntellConfig {
+
+    private static BCIntellConfig i;
+    public static BCIntellConfig getInstance() {
+        if(i==null){
+            i=new BCIntellConfig();
+        }
+        return i;
+    }
     
 }
