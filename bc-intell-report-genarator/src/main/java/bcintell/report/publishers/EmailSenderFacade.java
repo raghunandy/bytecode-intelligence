@@ -16,46 +16,41 @@ import leona.bc.intell.config.BCIntellConfig;
  * @author Raghu
  */
 public class EmailSenderFacade {
-    
+
     private BCIntellConfig bCIntellConfig;
     private static EmailSenderFacade i;
-    public static EmailSenderFacade getInstance(){
-        if(i!=null){
-            i= new EmailSenderFacade();
+
+    public static EmailSenderFacade getInstance() {
+        if (i != null) {
+            i = new EmailSenderFacade();
         }
         return i;
     }
 
-    
     public EmailSenderFacade() {
-        bCIntellConfig=BCIntellConfig.getInstance();
-        
+        bCIntellConfig = BCIntellConfig.getInstance();
+
     }
-    
-    
-    public  boolean sendEmail(String subject,String message,String ... toAddresses){
-        
-         SmtpServer smtpServer = SmtpSslServer
+
+    public boolean sendEmail(String subject, String message, String... toAddresses) {
+
+        SmtpServer smtpServer = SmtpSslServer
                 .create("smtp.gmail.com")
                 .authenticateWith("leona.dev.01@gmail.com", "WelcomeWelcome");
         SendMailSession session = smtpServer.createSession();
         session.open();
-        
-            String emailHtml = message;
-            /**
-             * User Delivery
-             */
-            
-                Email email = Email.create()
-                        .from("leona.dev.01@gmail.com")
-                        .to(toAddresses)
-                        .subject("Bytecode ReportDelivery")
-                        .addHtml(emailHtml);
-                session.sendMail(email);
-            
 
-           
+        String emailHtml = message;
+        /**
+         * User Delivery
+         */
         
+        Email email = Email.create()
+                .from("leona.dev.01@gmail.com")
+                .to(toAddresses)
+                .subject("Bytecode ReportDelivery")
+                .addHtml(emailHtml);
+        session.sendMail(email);
 
         session.close();
         return true;
