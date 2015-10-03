@@ -1,4 +1,4 @@
-package bcintell.analyzer;
+package bcintell.bc.intell.core;
 
 import java.io.IOException;
 import java.util.Arrays;
