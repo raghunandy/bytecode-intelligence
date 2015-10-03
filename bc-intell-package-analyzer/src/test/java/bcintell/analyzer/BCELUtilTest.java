@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bc.test;
+package bcintell.analyzer;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Raghu
  */
-public class NewEmptyJUnitTest {
+public class BCELUtilTest {
     
-    public NewEmptyJUnitTest() {
+    public BCELUtilTest() {
     }
     
     @BeforeClass
@@ -37,9 +37,16 @@ public class NewEmptyJUnitTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-     @Test
-     public void hello() {}
+    /**
+     * Test of checkExample method, of class BCELUtil.
+     */
+    @Test
+    public void testCheckExample() throws Exception {
+        System.out.println("Inspect Methods");
+        String absPathOfClass = "D:\\TTU\\bytecode-intelligence\\bc-intell-package-analyzer\\inputs\\EmailSenderFacade.class";
+        BCELUtil.inspectMethods(absPathOfClass);
+        
+    }
+
+    
 }
