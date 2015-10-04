@@ -9,10 +9,13 @@ The system purpose is to inspect Java bytecode internals using dependencies. The
 3) Report generator - generates a report and sends mail to the customer.
 
 ##References & Libraries:
-Apache BCEL: 
+####Apache BCEL: 
 https://commons.apache.org/proper/commons-bcel/
-GSON Libraries: https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html
-Jodd Mail
+
+####GSON Libraries: 
+https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html
+
+####Jodd Mail
 http://jodd.org/doc/email.html
 
 
