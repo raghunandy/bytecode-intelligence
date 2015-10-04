@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package extractjar;
-
+import java.io.File;
+import org.apache.commons.io.FilenameUtils;
 /**
  *
  * @author Piya
@@ -20,12 +21,22 @@ public class ExtractJar {
     java.util.jar.JarFile jarfile = new java.util.jar.JarFile(new java.io.File("/Users/Piya/desktop/BEProjectLibraries_Latest.jar"));
     System.out.print("I am here\n");
     java.util.Enumeration<java.util.jar.JarEntry> enu= jarfile.entries();
+    String name="";
+    String destdir = "/Users/Piya/desktop";  //Desktop is my destination directory
+    String name1= jarfile.getName();
+    String jarname= FilenameUtils.getBaseName(name1);
+    System.out.print(jarname);
+    destdir=destdir+"/"+jarname;
+    new File(destdir).mkdirs();
+    System.out.print(destdir);
+    
     while(enu.hasMoreElements())
     {
-        String destdir = "/Users/Piya/desktop";     //Desktop is my destination directory
+        
         java.util.jar.JarEntry file = (java.util.jar.JarEntry) enu.nextElement();
         System.out.print("I am here\n");
     java.io.File f = new java.io.File(destdir + java.io.File.separator + file.getName());
+    name=file.getName();
     if (file.isDirectory()) { // if its a directory, create it
         f.mkdir();
         System.out.print("I am here");
@@ -39,6 +50,8 @@ public class ExtractJar {
     fos.close();
     is.close();
 }
+    
+    System.out.print(name);
         /*java.util.jar.JarEntry je = enu.nextElement();
 
         System.out.println(je.getName());
