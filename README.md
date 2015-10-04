@@ -4,9 +4,10 @@ The system purpose is to inspect Java bytecode internals using dependencies. The
 
 ###Current Version:0.1
 
-1) Package Analyzer - extract all class files from the jar
-2) Core - analyze class files using Rule definition schema.
-3) Report generator - generates a report and sends mail to the customer.
+- Package Analyzer - extract all class files from the jar. 
+- Core - analyze class files using Rule definition schema.
+- Report generator - generates a report and sends mail to the customer.
+
 
 ##References & Libraries:
 ####Apache BCEL: 
