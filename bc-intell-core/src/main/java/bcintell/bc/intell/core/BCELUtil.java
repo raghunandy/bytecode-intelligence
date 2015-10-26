@@ -23,6 +23,6 @@ public class BCELUtil {
         
     }
     public static void main(String[] args) throws IOException {
-        inspectMethods("D:\\TTU\\bytecode-intelligence\\bc-intell-package-analyzer\\inputs\\EmailSenderFacade.class");
+        inspectMethods("E:\\MS SE\\Fall 2015\\Software Verification & Validation\\bytecode-intelligence\\bc-intell-package-analyzer\\ExtractedJars\\BEProjectLibraries_Latest\\Classifiers\\NaiveBayesian.class");
     }
 }
