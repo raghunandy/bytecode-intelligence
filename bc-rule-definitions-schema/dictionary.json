@@ -1,1 +1,16 @@
-{"ruleMap":{"SECURITY":[{"ruleType":"SECURITY","ruleTags":["network"],"parserType":"CLASS","ruleDefs":["HTTP","SSLSocket","SaslClient","SaslServer"]}],"PERFORMANCE":[{"ruleType":"PERFORMANCE","ruleTags":["time"],"parserType":"CODE","ruleDefs":["System.out.println"]}]}}
+{
+    "ruleMap": {
+        "SECURITY": [{
+                "ruleType": "SECURITY",
+                "ruleTags": ["network"],
+                "parserType": "CLASS",
+                "ruleDefs": ["HTTP", "SSLSocket", "SaslClient", "SaslServer"]
+            }],
+        "PERFORMANCE": [{
+                "ruleType": "PERFORMANCE",
+                "ruleTags": ["time"],
+                "parserType": "CODE",
+                "ruleDefs": ["System.out.println"]
+            }]
+    }
+}
