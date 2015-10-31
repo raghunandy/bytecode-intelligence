@@ -20,9 +20,10 @@ public class BCELUtil {
         JavaClass jc=p.parse();
         String s= p.parse().toString();
         Method[] al=jc.getMethods();
-        //System.out.println(Arrays.asList(al));
+        System.out.println(Arrays.asList(al));
         System.out.println(s);
         
+        //Adding comment just to check
     }
    /* public static void main(String[] args) throws IOException {
         inspectMethods("E:\\MS SE\\Fall 2015\\Software Verification & Validation\\bytecode-intelligence\\bc-intell-package-analyzer\\ExtractedJars\\BEProjectLibraries_Latest\\Classifiers\\NaiveBayesian.class");
