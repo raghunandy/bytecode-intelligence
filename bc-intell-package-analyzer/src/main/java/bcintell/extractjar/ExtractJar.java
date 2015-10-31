@@ -29,10 +29,9 @@ public class ExtractJar {
         JarFile jarfile = new JarFile(new File(jarFile));
         Enumeration<JarEntry> enu = jarfile.entries();
         String name = "";
-        //Desktop is my destination directory
         String name1 = jarfile.getName();
         String jarname = FilenameUtils.getBaseName(name1);
-        File destdir = new File(DEST_DIR + "\\" + jarname);
+        File destdir = new File(DEST_DIR + "/" + jarname);
         if (destdir.exists()) {
             FileUtils.deleteDirectory(destdir);
         }
@@ -41,7 +40,7 @@ public class ExtractJar {
         while (enu.hasMoreElements()) {
 
             JarEntry file = (JarEntry) enu.nextElement();
-            File f = new File(destdir + "\\" + file.getName());
+            File f = new File(destdir + "/" + file.getName());
             name = file.getName();
 
             if (file.isDirectory()) { // if its a directory, create it

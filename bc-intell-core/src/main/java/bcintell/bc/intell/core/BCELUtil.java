@@ -18,11 +18,13 @@ public class BCELUtil {
     public static void inspectMethods(String absPathOfClass) throws IOException{
         ClassParser p=new ClassParser(absPathOfClass);
         JavaClass jc=p.parse();
+        String s= p.parse().toString();
         Method[] al=jc.getMethods();
-        System.out.println(Arrays.asList(al));
+        //System.out.println(Arrays.asList(al));
+        System.out.println(s);
         
     }
-    public static void main(String[] args) throws IOException {
+   /* public static void main(String[] args) throws IOException {
         inspectMethods("E:\\MS SE\\Fall 2015\\Software Verification & Validation\\bytecode-intelligence\\bc-intell-package-analyzer\\ExtractedJars\\BEProjectLibraries_Latest\\Classifiers\\NaiveBayesian.class");
-    }
+    }*/
 }

@@ -46,8 +46,8 @@ public class BCELUtilTest {
     @Test
     public void testCheckExample() throws Exception {
         System.out.println("Inspect Methods");
-        String absPathOfClass = "D:\\TTU\\bytecode-intelligence\\bc-intell-package-analyzer\\inputs\\EmailSenderFacade.class";
-        BCELUtil.inspectMethods(absPathOfClass);
+        //String absPathOfClass = "D:\\TTU\\bytecode-intelligence\\bc-intell-package-analyzer\\inputs\\EmailSenderFacade.class";
+        //BCELUtil.inspectMethods(absPathOfClass);
         
     }
 

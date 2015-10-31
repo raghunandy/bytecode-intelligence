@@ -44,7 +44,7 @@ public class ExtractJarTest {
     @Test
     public void testExtractJar() throws Exception {
         System.out.println("extractJar");
-        String jarFile = "..\\project-inception\\target\\project-inception-0.1.jar";
+        String jarFile = "../project-inception/target/project-inception-0.1.jar";
         System.out.println("Current Path:"+new File(".").getAbsolutePath());
         System.out.println("Input Jar Abs Path:"+new File(jarFile).getAbsolutePath());
         System.out.println("Extracted To: "+ExtractJar.extractJar(jarFile));
