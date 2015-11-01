@@ -44,15 +44,14 @@ public class PackageAnalyzerTest {
     public void testMain() {
         System.out.println("main");
         String[] args = null;
-        //PackageAnalyzer.main(args);
+
         String jarFile1 = "../project-inception/target/project-inception-0.1.jar";
         try {
             String cool = PackageAnalyzer.packageAnalyzer(jarFile1);
         } catch (Exception e) {
 
         }
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+       
     }
 
 }
