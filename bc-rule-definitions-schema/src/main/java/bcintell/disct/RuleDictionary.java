@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leonaprojects.json.learn;
+package bcintell.disct;
 
+import com.google.gson.Gson;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,15 +17,17 @@ import java.util.Map;
  *
  * @author Deepti B
  */
-enum RuleTypes {
+
+public class RuleDictionary {
+public static enum RuleTypes {
 
     PERFORMANCE, SECURITY, MISC
 }
-enum Parser {
+public static enum Parser {
     CLASS, CODE
 }
 
-class Rule {
+public static class Rule {
 
     RuleTypes ruleType;
     String[] ruleTags;
@@ -65,8 +69,36 @@ class Rule {
     
 }
 
-public class RuleDictionary {
+    private static RuleDictionary ruleDictionary;
 
+    private RuleDictionary() {
+        
+    }
+    private static RuleDictionary loadFromFile(String filePath) throws IOException{
+        Gson gson = new Gson();
+        
+
+		BufferedReader br = new BufferedReader(
+			new FileReader(filePath));
+
+		//convert the json string back to object
+		RuleDictionary obj = gson.fromJson(br, RuleDictionary.class);
+
+		System.out.println(obj);
+                return obj;
+               
+        
+    }
+    
+    public static RuleDictionary instace() throws IOException{
+        if(ruleDictionary==null){
+           String current = new java.io.File( "." ).getCanonicalPath();
+        System.out.println("Current dir:"+current);
+            ruleDictionary=loadFromFile("../bc-rule-definitions-schema/dictionary.json");
+        }
+        return ruleDictionary;
+    }
+    
     public Map<RuleTypes, List<Rule>> ruleMap;
 
     public void createRuleDef(RuleTypes ruleType,  String[] ruleTag, Parser parserType, String ... ruleDef) {

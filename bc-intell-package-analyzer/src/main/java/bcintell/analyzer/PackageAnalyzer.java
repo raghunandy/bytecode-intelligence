@@ -5,11 +5,12 @@
  */
 package bcintell.analyzer;
  
+import bcintell.bc.intell.core.BCELInspector;
 import java.io.File;
-import java.util.jar.JarFile;
+
 import java.io.IOException;
 import bcintell.extractjar.ExtractJar;
-import bcintell.bc.intell.core.BCELUtil;
+
  
 /**
  *
@@ -27,7 +28,7 @@ public class PackageAnalyzer {
                         } else {    
                             if (file.getName().endsWith(".class") == true) {   //check if extracted file is a class file
                                 //System.out.println("file:" + file.getCanonicalPath());
-                                BCELUtil.inspectMethods(file.getAbsolutePath());   //if it is a class file, submit to BCELUtil for inspection
+                                BCELInspector.instace().inspect(file.getAbsolutePath());   //if it is a class file, submit to BCELUtil for inspection
                             }
                         }
                 }

@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leona.json.learn;
+package bcintell.disct;
 
+import bcintell.disct.RuleDictionary.Parser;
+import bcintell.disct.RuleDictionary.RuleTypes;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import java.io.File;
@@ -34,14 +36,14 @@ public class JsonFormatter {
         
          fout.close();*/
 
-        RuleDictionary Dictionary = new RuleDictionary();
-        Dictionary.ruleMap = new HashMap();
-        Dictionary.createRuleDef(RuleTypes.SECURITY,new String[] {"network"},Parser.CLASS, "HTTP","SSLSocket", "SaslClient", "SaslServer");
-        Dictionary.createRuleDef(RuleTypes.PERFORMANCE, new String[]{"time"},Parser.CODE, "System.out.println");
+        RuleDictionary dictionary = RuleDictionary.instace();
+        dictionary.ruleMap = new HashMap();
+        dictionary.createRuleDef(RuleTypes.SECURITY,new String[] {"network"},Parser.CLASS, "HTTP","SSLSocket", "SaslClient", "SaslServer");
+        dictionary.createRuleDef(RuleTypes.PERFORMANCE, new String[]{"time"},Parser.CODE, "System.out.println");
 
         
         Gson gson = new Gson();
-        JsonElement myElement = gson.toJsonTree(Dictionary, RuleDictionary.class);
+        JsonElement myElement = gson.toJsonTree(dictionary, RuleDictionary.class);
 
         FileOutputStream fout = new FileOutputStream(new File("dictionary.json"));
         fout.write(myElement.toString().getBytes());

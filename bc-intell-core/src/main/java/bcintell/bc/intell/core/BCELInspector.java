@@ -1,5 +1,6 @@
 package bcintell.bc.intell.core;
 
+import bcintell.disct.RuleDictionary;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -7,19 +8,34 @@ import org.apache.bcel.classfile.ClassParser;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
 
-public class BCELUtil {
+public class BCELInspector{
 
-    /**
-     * [public static bcintell.report.publishers.EmailSenderFacade getInstance(), public void <init>(), 
-     * public transient boolean sendEmail(String subject, String message, String[] toAddresses)]
-     * @param absPathOfClass
-     * @throws IOException 
-     */
-    public static void inspectMethods(String absPathOfClass) throws IOException{
+    private static BCELInspector bcelInspector;
+
+    private BCELInspector() {
+    }
+    public static BCELInspector instace(){
+        if(bcelInspector==null){
+            bcelInspector=new BCELInspector();
+        }
+        return bcelInspector;
+    }
+    
+    
+    public  void inspect(String absPathOfClass) throws IOException{
         ClassParser p=new ClassParser(absPathOfClass);
         JavaClass jc=p.parse();
         String s= p.parse().toString();
         Method[] al=jc.getMethods();
+        
+        RuleDictionary ruleDictionary= RuleDictionary.instace();
+        
+        ruleDictionary.ruleMap.forEach((ruleType,ruleList)->{
+                ruleList.forEach( (rule)->{
+                        System.out.println("Rule:"+rule.toString());
+                });
+        });
+        
         System.out.println(Arrays.asList(al));
         System.out.println(s);
         
@@ -32,3 +48,4 @@ public class BCELUtil {
     }*/
     
 }
+    

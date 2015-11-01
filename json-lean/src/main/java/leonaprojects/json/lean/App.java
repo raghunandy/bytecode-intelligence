@@ -28,10 +28,12 @@ public class App {
         
         Gson gson=new Gson();
         JsonElement jsonElement=gson.toJsonTree(cb, CarBean.class);
+        //JsonElement jsonElement=gson.toJsonTree(cb, CarBean.class);
         FileOutputStream fout=new FileOutputStream(new File("car.json"));
         fout.write(jsonElement.toString().getBytes());
         
         fout.close();
+        
         
     }
 }
