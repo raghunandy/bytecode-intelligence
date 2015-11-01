@@ -36,6 +36,8 @@ public class PackageAnalyzer {
                 e.printStackTrace();
         }
     }
+    
+    //Todo : packageAnalyzer = should be doPackageAnalsys
      
     public static String packageAnalyzer(String jarFile) throws IOException 
     {   
