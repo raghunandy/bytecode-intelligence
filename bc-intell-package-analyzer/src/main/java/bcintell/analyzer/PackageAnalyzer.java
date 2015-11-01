@@ -28,7 +28,7 @@ public class PackageAnalyzer {
                         } else {    
                             if (file.getName().endsWith(".class") == true) {   //check if extracted file is a class file
                                 //System.out.println("file:" + file.getCanonicalPath());
-                                BCELInspector.instace().inspect(file.getAbsolutePath());   //if it is a class file, submit to BCELUtil for inspection
+                                BCELInspector.instace().inspect(file.getAbsolutePath());   //if it is a class file, submit to BCELInspector for inspection
                             }
                         }
                 }
@@ -46,7 +46,6 @@ public class PackageAnalyzer {
         File currentDir = new File(path); // current directory
         digFolderToFindClassFiles(currentDir);
         //System.out.println(path);
-        System.out.println("COOL");
        //JarFile jarfile = new JarFile(new File(jarFile1));
        //File tempFolder= extractJar(jarFile);
         return path;

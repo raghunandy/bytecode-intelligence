@@ -38,10 +38,7 @@ public class BCELInspector{
         
         System.out.println(Arrays.asList(al));
         System.out.println(s);
-        
-      
-        
-        //Adding comment just to check
+    
     }
    /* public static void main(String[] args) throws IOException {
         inspectMethods("E:\\MS SE\\Fall 2015\\Software Verification & Validation\\bytecode-intelligence\\bc-intell-package-analyzer\\ExtractedJars\\BEProjectLibraries_Latest\\Classifiers\\NaiveBayesian.class");

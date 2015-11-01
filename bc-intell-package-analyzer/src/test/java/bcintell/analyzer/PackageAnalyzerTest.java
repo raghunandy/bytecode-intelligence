@@ -47,7 +47,7 @@ public class PackageAnalyzerTest {
 
         String jarFile1 = "../project-inception/target/project-inception-0.1.jar";
         try {
-            String cool = PackageAnalyzer.packageAnalyzer(jarFile1);
+            String analyzer = PackageAnalyzer.packageAnalyzer(jarFile1);
         } catch (Exception e) {
 
         }
