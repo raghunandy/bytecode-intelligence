@@ -14,7 +14,23 @@ The system purpose is to inspect Java bytecode internals using dependencies. The
  2) Including more rule combinations for inspecting Security and Performance categories. 
 
 
-Open the projects in Netbeans 
+###Running the code: 
+Open the projects in Netbeans and clean and build the project bc-intell
+
+######Sequence of Maven 
+project-inception<br>
+bc-intell-config<br>
+bc-rule-definitions-schema<br>
+bc-intell-core<br>
+bc-intell-report-genarator<br>
+bc-intell-package-analyzer<br>
+be-intell<br>
+
+"
+{"reportMap":{"PERFORMANCE":[{"fileNameAndLocation":"PrintDemo.class","numberOfOccurences":2},{"fileNameAndLocation":"TestThread.class","numberOfOccurences":4},{"fileNameAndLocation":"ThreadDemo.class","numberOfOccurences":6}]}}"
+
+
+
 
 ### Version:0.1
 
