@@ -6,11 +6,11 @@ The system purpose is to inspect Java bytecode internals using dependencies. The
 
 ###Current Version:0.2 (Iteration 2)
 
- Package Analyzer - In the version 0.2  package analyzer will inspect code using BCEL and bruteforce approaches. And the rule dictionary matching will take the results and match every unit of code to rules and produce report dictionary.
+ Package Analyzer - In the version 0.2  package analyzer will inspect code using BCEL and bruteforce approaches. And the rule dictionary matching will take the results and match every unit of code to rules and produce report dictionary. <br>
  
- Pending:
+ Pending: <br>
  
- 1) Email Generation for the report
+ 1) Email Generation for the report <br>
  2) Including more rule combinations for inspecting Security and Performance categories. 
 
 
