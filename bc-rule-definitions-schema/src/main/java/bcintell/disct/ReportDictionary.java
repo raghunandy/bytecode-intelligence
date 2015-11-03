@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class ReportDictionary {
 
-    public class FootPrint {
+    public static class FootPrint {
 
         private String fileNameAndLocation;
 
@@ -40,7 +40,26 @@ public class ReportDictionary {
             this.numberOfOccurences = numberOfOccurences;
         }
 
+        public void increment() {
+            numberOfOccurences++;
+        }
+
+      
+
+        
     }
+    public static ReportDictionary instance;
+    public static ReportDictionary instance(){
+        if(instance==null){
+            instance=new ReportDictionary();
+        }
+        return instance;
+    }
+
+    private  ReportDictionary() {
+    }
+    
+    
     public Map<Rule, List<FootPrint>> reportMap = new HashMap<>();
 
     public Map<Rule, List<FootPrint>> getReportMap() {

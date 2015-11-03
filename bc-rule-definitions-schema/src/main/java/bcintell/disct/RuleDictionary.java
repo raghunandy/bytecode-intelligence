@@ -66,6 +66,12 @@ public static class Rule {
         this.parserType = parserType;
     }
 
+        @Override
+        public String toString() {
+                return ruleType.name();
+        }
+
+    
     
 }
 

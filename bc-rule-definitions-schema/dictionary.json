@@ -11,6 +11,12 @@
                 "ruleTags": ["time"],
                 "parserType": "CODE",
                 "ruleDefs": ["System.out.println"]
-            }]
+            },{
+                "ruleType": "PERFORMANCE",
+                "ruleTags": ["time"],
+                "parserType": "CLASS",
+                "ruleDefs": ["Thread"]
+            }
+            ]
     }
 }
