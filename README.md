@@ -26,8 +26,8 @@ bc-intell-report-genarator<br>
 bc-intell-package-analyzer<br>
 be-intell<br>
 
-"
-{"reportMap":{"PERFORMANCE":[{"fileNameAndLocation":"PrintDemo.class","numberOfOccurences":2},{"fileNameAndLocation":"TestThread.class","numberOfOccurences":4},{"fileNameAndLocation":"ThreadDemo.class","numberOfOccurences":6}]}}"
+`
+{"reportMap":{"PERFORMANCE":[{"fileNameAndLocation":"PrintDemo.class","numberOfOccurences":2},{"fileNameAndLocation":"TestThread.class","numberOfOccurences":4},{"fileNameAndLocation":"ThreadDemo.class","numberOfOccurences":6}]}}`
 
 
 
