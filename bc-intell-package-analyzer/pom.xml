@@ -5,6 +5,14 @@
     <artifactId>bc-intell-package-analyzer</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
+    <repositories>
+    <repository>
+      <id>java.net</id>
+      <url> http://clojars.org/repo</url>
+    </repository>
+ </repositories>
+   
+    
     <dependencies>
         <dependency>
             <groupId>
@@ -23,6 +31,11 @@
             <artifactId>junit</artifactId>
             <version>4.10</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.clojars.razum2um</groupId>
+            <artifactId>jd-core-java</artifactId>
+            <version>1.2</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
