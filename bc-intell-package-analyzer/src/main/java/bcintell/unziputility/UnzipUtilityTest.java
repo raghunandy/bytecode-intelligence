@@ -15,7 +15,7 @@ public class UnzipUtilityTest {
         String destDirectory = "/Users/Piya/desktop";
         UnzipUtility unzipper = new UnzipUtility();
         try {
-            unzipper.unzip(zipFilePath, destDirectory);
+            unzipper.unzip(zipFilePath);
         } catch (Exception ex) {
             // if some errors occurred
             ex.printStackTrace();
