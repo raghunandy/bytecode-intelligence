@@ -30,19 +30,19 @@ import jd.ide.intellij.JavaDecompiler;
  */
 public class PackageAnalyzer {
 
-    public static void digFolderToFindClassFiles(File dir) {
+    public static void analysisOfJavaFiles(File dir) {
         File[] files = dir.listFiles();
         for (File file : files) {
             if (file.isDirectory()) {
-                digFolderToFindClassFiles(file);
+                analysisOfJavaFiles(file);
             } else {
-                if (file.getName().endsWith(".class") == true) {
+                if (file.getName().endsWith(".java") == true) {
                     try {
-                        List<String> l1 = BCELCodeInspector.instace().getLines(file.getAbsolutePath());
+                        //List<String> l1 = BCELCodeInspector.instace().getLines(file.getAbsolutePath());
                         List<String> l2 = ByteCodeInspector.instace().getLines(file.getAbsolutePath());
                         
                         
-                        ReportDictionary report = RulesToCodeMatcher.instance().matchWithAllRules(file.getAbsolutePath(), l1, l2);
+                        ReportDictionary report = RulesToCodeMatcher.instance().matchWithAllRules(file.getAbsolutePath(), l2);
 
                     } catch (IOException ex) {
                         Logger.getLogger(PackageAnalyzer.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,7 +61,8 @@ public class PackageAnalyzer {
         
         String path = UnzipUtility.unzip(zipFile);
         File currentDir = new File(path); // current directory
-        digFolderToFindClassFiles(currentDir);
+        System.out.print(currentDir);
+        analysisOfJavaFiles(currentDir);
         System.out.println("Report:");
 
         System.out.println("Report:" + new Gson().toJsonTree(ReportDictionary.instance()));
