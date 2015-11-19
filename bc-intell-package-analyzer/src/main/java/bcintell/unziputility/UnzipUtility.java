@@ -11,7 +11,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 
 /**
  *
@@ -21,7 +24,7 @@ public class UnzipUtility {
     /**
      * Size of the buffer to read/write data
      */
-        public static final String DEST_DIR = "extractedZip";
+        public static final String DEST_ZIP_DIR = "extractedZip";
 
     private static final int BUFFER_SIZE = 4096;
     /**
@@ -29,15 +32,17 @@ public class UnzipUtility {
      * destDirectory (will be created if does not exists)
      */
     public static String unzip(String zipFilePath) throws IOException {
-        File destDir = new File(DEST_DIR + "/" + zipFilePath);
-        if (!destDir.exists()) {
-            destDir.mkdir();
+        File zipFile=new File(zipFilePath);
+        File destDir = new File(DEST_ZIP_DIR + "/" + FilenameUtils.getBaseName(zipFile.getName()));
+        if (destDir.exists()) {
+            FileUtils.deleteDirectory(destDir);
         }
-        ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFilePath));
+        destDir.mkdirs();
+        ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFile));
         ZipEntry entry = zipIn.getNextEntry();
         // iterates over entries in the zip file
         while (entry != null) {
-            String filePath = destDir + File.separator + entry.getName();
+            String filePath = destDir + "/"+ entry.getName();
             if (!entry.isDirectory()) {
                 // if the entry is a file, extracts it
                 extractFile(zipIn, filePath);
