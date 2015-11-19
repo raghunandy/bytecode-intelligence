@@ -31,7 +31,7 @@ public class RulesToCodeMatcher {
     
     
     
-    public ReportDictionary matchWithAllRules(String absClassPath, List<String> byteCodeLines, List<String> bcelLines) throws IOException {
+    public ReportDictionary matchWithAllRules(String absClassPath, List<String> byteCodeLines) throws IOException {
 
         RuleDictionary ruleDictionary = RuleDictionary.instace();
 
@@ -46,12 +46,12 @@ public class RulesToCodeMatcher {
                     }
                 });
 
-                bcelLines.forEach((line) -> {
-                    boolean check = isRuleMatchExists(rule, line);
-                    if (check) {
-                        footPrint.increment();
-                    }
-                });
+//                bcelLines.forEach((line) -> {
+//                    boolean check = isRuleMatchExists(rule, line);
+//                    if (check) {
+//                        footPrint.increment();
+//                    }
+//                });
                 submitFootPrint(rule,footPrint);
             });
 
