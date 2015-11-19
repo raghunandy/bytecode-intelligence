@@ -55,18 +55,18 @@ public class PackageAnalyzer {
     }
 
     public static String packageAnalyzer(String jarFile) throws IOException, DecompilerException {
-        String zipFile=jarFile.replace(".jar", ".zip");
+        String zipFile=jarFile.replace(".jar", "");
         Decompiler jd=new Decompiler();
         jd.decompile(jarFile,zipFile);
         
-        String path = UnzipUtility.unzip(zipFile);
-        File currentDir = new File(path); // current directory
+//        String path = UnzipUtility.unzip(zipFile);
+        File currentDir = new File(zipFile); // current directory
         System.out.print(currentDir);
         analysisOfJavaFiles(currentDir);
         System.out.println("Report:");
 
         System.out.println("Report:" + new Gson().toJsonTree(ReportDictionary.instance()));
-        return path;
+        return zipFile;
 
     }
 }
