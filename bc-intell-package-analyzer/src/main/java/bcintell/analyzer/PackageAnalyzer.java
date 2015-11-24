@@ -5,22 +5,19 @@
  */
 package bcintell.analyzer;
 
-import bcintell.bc.intell.core.BCELCodeInspector;
 import bcintell.bc.intell.core.ByteCodeInspector;
 import bcintell.bc.intell.core.RulesToCodeMatcher;
 import bcintell.disct.ReportDictionary;
+import bcintell.report.genarator.ReportPublisher;
 import java.io.File;
 
 import java.io.IOException;
-import bcintell.extractjar.ExtractJar;
-import bcintell.unziputility.UnzipUtility;
 import com.google.gson.Gson;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jd.core.Decompiler;
 import jd.core.DecompilerException;
-import jd.ide.intellij.JavaDecompiler;
 
 /**
  * check if extracted file is a class file if it is a class file, submit to
@@ -43,7 +40,7 @@ public class PackageAnalyzer {
                         
                         
                         ReportDictionary report = RulesToCodeMatcher.instance().matchWithAllRules(file.getAbsolutePath(), l2);
-
+                            
                     } catch (IOException ex) {
                         Logger.getLogger(PackageAnalyzer.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -54,7 +51,7 @@ public class PackageAnalyzer {
 
     }
 
-    public static String packageAnalyzer(String jarFile) throws IOException, DecompilerException {
+    public static String packageAnalyzer(String jarFile,String ... deliveryEmails) throws IOException, DecompilerException {
         String zipFile=jarFile.replace(".jar", "");
         Decompiler jd=new Decompiler();
         jd.decompile(jarFile,zipFile);
@@ -64,8 +61,9 @@ public class PackageAnalyzer {
         System.out.print(currentDir);
         analysisOfJavaFiles(currentDir);
         System.out.println("Report:");
-
+        
         System.out.println("Report:" + new Gson().toJsonTree(ReportDictionary.instance()));
+        ReportPublisher.instance().submitForReport(ReportDictionary.instance(),deliveryEmails);
         return zipFile;
 
     }

@@ -5,10 +5,17 @@
  */
 package bcintell.report.genarator;
 
+import bcintell.disct.ReportDictionary;
+import com.google.gson.Gson;
+
 /**
  *
  * @author Raghu
  */
 public class ReportTemplate {
+
+    public static String getTemplateStringFor(ReportDictionary report) {
+        return new Gson().toJsonTree(report).toString();
+    }
     
 }
