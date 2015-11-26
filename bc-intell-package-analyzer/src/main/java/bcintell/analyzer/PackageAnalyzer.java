@@ -41,6 +41,7 @@ public class PackageAnalyzer {
                         
                         ReportDictionary report = RulesToCodeMatcher.instance().matchWithAllRules(file.getAbsolutePath(), l2);
                             
+                        
                     } catch (IOException ex) {
                         Logger.getLogger(PackageAnalyzer.class.getName()).log(Level.SEVERE, null, ex);
                     }

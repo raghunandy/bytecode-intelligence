@@ -49,6 +49,7 @@ public class PackageAnalyzerTest {
         try {
             String analyzer = PackageAnalyzer.packageAnalyzer(jarFile1,"visumagic@gmail.com");
         } catch (Exception e) {
+            e.printStackTrace();
 
         }
        

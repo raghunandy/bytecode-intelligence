@@ -21,7 +21,7 @@ public class EmailSenderFacade {
     private static EmailSenderFacade i;
 
     public static EmailSenderFacade getInstance() {
-        if (i != null) {
+        if (i == null) {
             i = new EmailSenderFacade();
         }
         return i;
